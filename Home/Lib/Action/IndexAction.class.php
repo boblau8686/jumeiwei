@@ -4,6 +4,10 @@ class IndexAction extends Action
 {
     public function index()
     {
+        $article = M('articl');
+echo '<pre>';
+print_r($article);
+echo '</pre>';
         $this->display('index');
     }
 }
