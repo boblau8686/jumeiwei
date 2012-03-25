@@ -1,0 +1,54 @@
+* {font-family:"宋体", 'Arial Narrow';}
+html, body {margin:0px;padding:0px;}
+a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
+
+.topbanner {
+	height: 30px;
+	padding: 10px 180px 0px 0px;
+	text-align:right;
+	border:1px solid #efefef;
+}
+.topbanner a {text-decoration:none;}
+.topbanner a:hover {text-decoration:underline;}
+
+.container {width:1000px;margin:0px auto;border:1px solid #efefef;}
+.header {width:100%;height:60px;border:1px solid #efefef;}
+
+/* navigation */
+.nav {width:100%;height:80px;border:1px solid #efefef;}
+.nav ul {
+	list-style-type:none;
+	height:70px; padding:0px;
+	margin:0px 0px;
+	background-color:#efefef;
+}
+.nav ul li {float:left;margin:5px;border-radius: 10px;}
+.nav ul li a {
+	background-repeat: no-repeat;
+	background-position: right;
+	padding-right: 32px;
+	padding-left: 32px;
+	display: block;
+	line-height: 60px;
+	text-decoration: none;
+	font-size: 22px;
+	color: #371C1C;
+	border-radius: 10px;
+}
+.nav ul li a:hover {background-color:#dedede;}
+.nav ul li.active {background-color:#dedede;}
+
+/* main content */
+.main {border:1px solid #dcdcdc;overflow:auto;}
+/* b_l means Business Left */
+.b_l {width:680px;margin-left:20px;float:left;}
+.b_l .b_menu {border:1px solid #ddd;border-radius:15px;}
+.b_l table {border-collapse:collapse;}
+.intro {overflow:auto;zoom:1;border:1px solid red;}
+.intro .b_base {float:left;}
+.intro .b_base ul {list-style-type:none;}
+.intro .b_pic {float:right;}
+
+.sidebar {width:260px;margin-right:20px;float:right;border:1px solid #dcdcdc;}
+
+.footer {height:40px;border:1px solid #dcdcdc;}
