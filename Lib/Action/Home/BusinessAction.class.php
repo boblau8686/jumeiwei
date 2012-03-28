@@ -15,12 +15,11 @@ class BusinessAction extends Action
         $bsInfo = $business->find($bid);
         $this->assign('bsInfo', $bsInfo);
         
-        // 获取菜品分类
-        $foodCategory = M('food_category');
-        // TODO 接着在这里写下去
-        $foodCategory->join('RIGHT JOIN food ON food_category.id = food.category_id')
-                     ->where('food_category.business_id = ' . $bid)
-                     ->select();
+        // 获取商家的菜品分类以及菜品
+        $foodObj = new FoodModel();
+        list($cats, $food) = $foodObj->getCateFood($bid);
+        $this->assign('cats', $cats);
+        $this->assign('food', $food);
         
         $this->display();
     }

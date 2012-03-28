@@ -4,7 +4,7 @@
       <div class=b_base>
         <h3>{$bsInfo.name}</h3>
         <ul>
-          <li>起送价: {$bsInfo.start_price}</li>
+          <li>起送价: {$bsInfo.bottom_price}元</li>
           <li>地址: {$bsInfo.address}</li>
           <li>简介: {$bsInfo.description}</li>
         </ul>
@@ -20,32 +20,28 @@
           <li>本店菜单</li>
         </ul>
       </div>
-      <div class=food_cate>分类: 分类1, 分类2</div>
+      <div class=food_cate>
+        <span>分类:</span>
+        <!-- 输出分类 -->
+        <volist name="cats" id="cat" key="k" >
+        <span>{$cat}</span>
+        </volist>
+      </div>
       <div class=food_list>
+        <volist name="food" id="food" key="k" >
         <div class=cate_list>
-          <h4>分类1</h4>
+          <h4>{$food['cat_name']}</h4>
           <table border="1">
             <tr>
-              <td>番茄蛋汤</td>
-              <td>已订18次</td>
-              <td>￥8.00</td>
+              <td>{$food['name']}</td>
+              <td>已订{$food['ordered_num']}次</td>
+              <td>￥{$food['price']}</td>
               <td><input type=button value=收藏 /> <input
                 type=button value=预订 /></td>
             </tr>
           </table>
         </div>
-        <div class=cate_list>
-          <h4>分类2</h4>
-          <table border="1">
-            <tr>
-              <td>番茄蛋汤</td>
-              <td>已订18次</td>
-              <td>￥8.00</td>
-              <td><input type=button value=收藏 /> <input
-                type=button value=预订 /></td>
-            </tr>
-          </table>
-        </div>
+        </volist>
       </div>
     </div>
   </div>
