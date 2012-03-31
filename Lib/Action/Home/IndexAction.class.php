@@ -5,6 +5,6 @@ class IndexAction extends Action
 {
     public function index()
     {
-        $this->redirect('/Business/index/id/1');
+        $this->redirect('Business/index', array('id' => 1));
     }
 }
