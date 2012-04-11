@@ -23,7 +23,7 @@
       <div class=food_cate>
         <span>分类:</span>
         <!-- 输出分类 -->
-        <volist name="cats" id="cat" key="k" >
+        <volist name="cats" id="cat" key="k">
         <span>{$cat}</span>
         </volist>
       </div>
@@ -32,12 +32,14 @@
         <div class=cate_list>
           <h4>{$food['cat_name']}</h4>
           <table border="1">
-            <tr>
-              <td>{$food['name']}</td>
+            <tr class="menu_{$food['id']}">
+              <td class="food_name">{$food['name']}</td>
               <td>已订{$food['ordered_num']}次</td>
-              <td>￥{$food['price']}</td>
-              <td><input type=button value=收藏 /> <input
-                type=button value=预订 /></td>
+              <td class="food_price">￥<font>{$food['price']}</font></td>
+              <td>
+                <input type=button value=收藏 /> 
+                <input type=button value=预订 onclick="addToCart('{$food['id']}')" />
+              </td>
             </tr>
           </table>
         </div>
@@ -47,10 +49,15 @@
   </div>
   <div class="sidebar">
     <div class=>我预订的菜单</div>
-    <ul>
-      <li>菜品1</li>
-      <li>菜品2</li>
-    </ul>
+    <form action="#">
+      <ul>
+        <li>
+          <font>菜品1</font>
+          <input type="text" size="2" value="1" />
+          <font>份</font>
+        </li>
+      </ul>
+    </form>
     <div class=statis>小计</div>
   </div>
 </div>

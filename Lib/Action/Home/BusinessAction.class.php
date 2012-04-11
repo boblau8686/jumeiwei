@@ -20,7 +20,7 @@ class BusinessAction extends Action
         list($cats, $food) = $foodObj->getCateFood($bid);
         $this->assign('cats', $cats);
         $this->assign('food', $food);
-        
+
         $this->display();
     }
 }
