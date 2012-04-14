@@ -50,14 +50,22 @@
   <div class="sidebar">
     <div class=>我预订的菜单</div>
     <form action="#">
-      <ul>
-        <li>
-          <font>菜品1</font>
-          <input type="text" size="2" value="1" />
-          <font>份</font>
-        </li>
-      </ul>
+      <ul class="order_foot_list"></ul>
     </form>
-    <div class=statis>小计</div>
+    <div class=statis>
+      <span>小计</span>
+      <span id="totalPrice"></span>
+    </div>
+    <div class="cart_button">
+      <input type="button" value="提交" />
+    </div>
   </div>
 </div>
+
+<script type="text/javascript">
+$(function(){
+	<if condition="!empty($cartIdList)">
+	addToCart({$cartIdList});
+	</if>
+});
+</script>

@@ -50,5 +50,6 @@ a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
 .intro .b_pic {float:right;}
 
 .sidebar {width:260px;margin-right:20px;float:right;border:1px solid #dcdcdc;}
+.sidebar .cart_button {text-align:right;}
 
 .footer {height:40px;border:1px solid #dcdcdc;}

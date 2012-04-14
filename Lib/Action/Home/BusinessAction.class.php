@@ -20,7 +20,26 @@ class BusinessAction extends Action
         list($cats, $food) = $foodObj->getCateFood($bid);
         $this->assign('cats', $cats);
         $this->assign('food', $food);
+        
+        // 处理购物车
+        $cart = new Cart();
+        $cartIdList = $cart->get();
+        $this->assign('cartIdList', json_encode($cartIdList));
 
         $this->display();
+    }
+    
+    /**
+     * 
+     * 
+     */
+    public function cartadd()
+    {
+        $foodid = $this->_get('foodid');
+        
+        $cart = new Cart();
+        if ($cart->add($foodid)) {
+            echo json_encode(array('status' => 0));
+        }
     }
 }
