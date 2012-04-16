@@ -51,5 +51,8 @@ a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
 
 .sidebar {width:260px;margin-right:20px;float:right;border:1px solid #dcdcdc;}
 .sidebar .cart_button {text-align:right;}
+.sidebar .subtract, .add {border:1px solid #bcbcbc;cursor:pointer;}
+.sidebar .subtract {margin-left:3px;}
+.sidebar .add {margin-right:3px;}
 
 .footer {height:40px;border:1px solid #dcdcdc;}

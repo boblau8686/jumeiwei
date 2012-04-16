@@ -30,8 +30,7 @@ class BusinessAction extends Action
     }
     
     /**
-     * 
-     * 
+     * 添加一个菜品到购物车
      */
     public function cartadd()
     {
@@ -42,4 +41,18 @@ class BusinessAction extends Action
             echo json_encode(array('status' => 0));
         }
     }
+    
+    /**
+     * 从购物车里删除一个菜品 
+     */
+    public function cartsubstract()
+    {
+        $foodid = $this->_get('foodid');
+        
+        $cart = new Cart();
+        if ($cart->substract($foodid)) {
+            echo json_encode(array('status' => 0));
+        }
+    }
+    
 }
