@@ -49,16 +49,16 @@
   </div>
   <div class="sidebar">
     <div class=>我预订的菜单</div>
-    <form action="#">
+    <form action="/cart" method=post>
       <ul class="order_foot_list"></ul>
+      <div class=statis>
+        <span>小计</span>
+        <span id="totalPrice"></span>
+      </div>
+      <div class="cart_button">
+        <input type="submit" value="提交" />
+      </div>
     </form>
-    <div class=statis>
-      <span>小计</span>
-      <span id="totalPrice"></span>
-    </div>
-    <div class="cart_button">
-      <input type="button" value="提交" />
-    </div>
   </div>
 </div>
 
