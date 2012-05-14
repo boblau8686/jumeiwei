@@ -30,5 +30,21 @@ class FoodModel extends Model
         }
         return array($cat, $food);
     }
+    
+    /**
+     * 获取指定id的菜品信息
+     * @param int $id
+     */
+    public function getFood($id) 
+    {
+        if (is_array($id)) {
+            $whereid = sprintf(' id in (%s) ', implode(',', $id));
+        } else {
+            $whereid = sprintf(' id = %d ', $id);
+        }
+        $rows = $this->field('id, name, price')->where($whereid)->select();
+        
+        return $rows;
+    }
 }
 

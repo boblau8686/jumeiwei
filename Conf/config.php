@@ -6,6 +6,6 @@ return array(
     'LAYOUT_ON'            => 1,
     'URL_CASE_INSENSITIVE' => true,
     'LOAD_EXT_CONFIG'      => 'db', 
-    'SHOW_PAGE_TRACE'      => false,
-//    'URL_PATHINFO_DEPR'    => '-',
+    'SHOW_PAGE_TRACE'      => true, 
+    'APP_AUTOLOAD_PATH'    => '@.Common'
 );

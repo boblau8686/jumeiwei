@@ -21,6 +21,38 @@ class BusinessAction extends Action
         $this->assign('cats', $cats);
         $this->assign('food', $food);
         
+        // 处理购物车
+        $cart = new Cart();
+        $cartIdList = $cart->get();
+        $this->assign('cartIdList', json_encode($cartIdList));
+
         $this->display();
     }
+    
+    /**
+     * 添加一个菜品到购物车
+     */
+    public function cartadd()
+    {
+        $foodid = $this->_get('foodid');
+        
+        $cart = new Cart();
+        if ($cart->add($foodid)) {
+            echo json_encode(array('status' => 0));
+        }
+    }
+    
+    /**
+     * 从购物车里删除一个菜品 
+     */
+    public function cartsubstract()
+    {
+        $foodid = $this->_get('foodid');
+        
+        $cart = new Cart();
+        if ($cart->substract($foodid)) {
+            echo json_encode(array('status' => 0));
+        }
+    }
+    
 }
