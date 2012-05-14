@@ -7,15 +7,15 @@
         <table width="100%" cellpadding="5" cellspacing="0">
             <tr>
                 <th>昵称</th>
-                <td>这里是昵称</td>
+                <td>{$customer.nickname}</td>
                 <th>手机</th>
-                <td>13912341234</td>
+                <td>{$customer.mobile}</td>
             </tr>
             <tr>
                 <th>邮箱</th>
-                <td>yourname@domain</td>
+                <td>{$customer.email}</td>
                 <th>积分</th>
-                <td>1000</td>
+                <td>{$customer.score}</td>
             </tr>
         </table>
     </div>
@@ -31,13 +31,15 @@
                 <th>电话</th>
                 <th>操作</th>
             </tr>
+            <volist name="list" id="address">
             <tr>
-                <td align="center">1</td>
-                <td>地址地址地址地址</td>
-                <td align="center">张三</td>
-                <td align="center">13912341234</td>
-                <td align="center"><a href="del/id">删除</a></td>
+                <td>1</td>
+                <td class="text_left">{$address.address}</td>
+                <td>{$address.realname}</td>
+                <td>{$address.telephone}</td>
+                <td><a href="del/id">删除</a></td>
             </tr>
+            </volist>
         </table>
     </div>
 </div>

@@ -2,6 +2,7 @@
 html, body, ul, li {margin:0px;padding:0px;}
 a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
 ul { list-style: none; }
+a { text-decoration: none; }
 
 /* common */
 .topbanner {
@@ -24,7 +25,8 @@ ul { list-style: none; }
 
 .table { width: 100%; border-collapse: collapse; }
 .table th { background: #EEE; }
-.table td { background: #FFF; }
+.table td { background: #FFF; text-align: center; }
+.table td.text_left { text-align: left; }
 
 /* navigation */
 .nav {width:100%;height:80px;border:1px solid #efefef;}
@@ -70,7 +72,7 @@ ul { list-style: none; }
 .cus_right { width: 800px; float: right; padding-top: 10px; }
 .cus_right div { width: 800px; float: left; }
 .cus_right .basic_info { width: 778px; border: 1px #000 solid; padding: 10px; }
-.cus_right .basic_info a { margin: 0 10px; }
+.cus_right .basic_info a { margin: 0 20px 0 0; }
 .cus_right .basic_info .head_pic { width:120px; text-align: center; }
 .cus_right .basic_info .nick_name { font-family: 'Microsoft Yahei'; font-size: 18px; font-weight: bold; }
 .cus_right .basic_info .grade { width: 658px; margin: 10px 0 0 0; }

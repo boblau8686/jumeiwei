@@ -1,9 +1,10 @@
 <include file="Tpl/Home/cus_menu.html" /> 
 <div class="cus_right">
     <ul class="tab">
-        <li>收藏的美食</li>
-        <li>收藏的餐厅</li>
+        <li><a href="__ACTION__/type/1">收藏的美食</a></li>
+        <li><a href="__ACTION__/type/2">收藏的餐厅</a></li>
     </ul>
+    <eq name="type" value="1">
     <table id="collect_food" cellpadding="5" cellspacing="0" border="1" bordercolor="#DDD" class="table">
         <thead>
             <tr>
@@ -15,27 +16,35 @@
             </tr>
         </thead>
         <tbody>
+            <volist name="list" id="vo">
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{$vo.name}</td>
+                <td>{$vo.price}</td>
+                <td>{$vo.ordered_num}</td>
+                <td>{$vo.grade}</td>
+                <td><a href="__SELF__/buy">购买</a><a href="__SELF__/del">删除</a></td>
             </tr>
+            </volist>
         </tbody>
     </table>
-    <table id="collect_store" cellpadding="5" cellspacing="0" border="1" bordercolor="#DDD" class="table" style="display: none">
+    <else/>
+    <table id="collect_store" cellpadding="5" cellspacing="0" border="1" bordercolor="#DDD" class="table">
         <thead>
             <tr>
                 <th>餐厅名称</th>
+                <th>地址</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody>
+            <volist name="list" id="vo">
             <tr>
-                <td></td>
-                <td></td>
+                <td>{$vo.name}</td>
+                <td>{$vo.address}</td>
+                <td><a href="">去看看</a><a href="">删除</a></td>
             </tr>
+            </volist>
         </tbody>
     </table>
+    </eq>
 </div>
