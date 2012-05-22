@@ -64,6 +64,17 @@ class CustomerAction extends Action {
         $this->display();
     }
 
+    public function insertAddress() {
+        $Address = D('Address');
+        $data = $Address->create();
+        $result = $Address->add($data);
+        dump($result);
+        if ($result) {
+            $this->redirect('Customer/info');
+        }
+
+    }
+
 }
 
 ?>

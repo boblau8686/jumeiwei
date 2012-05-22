@@ -6,8 +6,12 @@
  * @author Bob
  */
 class AddressModel extends RelationModel {
-    protected $_link = array(
-        'Customer'
+    protected $_map = array(
+        'DiZhi' => 'address',
+        'ShouHuoRen' => 'realname',
+        'DianHua' => 'telephone',
+        'YouXiang' => 'email',
+        'YongHuId' => 'customer_id'
     );
 }
 
