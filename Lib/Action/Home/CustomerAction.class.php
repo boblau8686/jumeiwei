@@ -13,6 +13,24 @@ class CustomerAction extends Action {
         if ($customer) {
             $this->assign('customer', $customer);
         }
+
+        $Order = D('Order');
+
+        // 各种状态的订单数量
+        $status0Count = $Order->where('customer_id = ' . '1' . ' AND order_status = 0')->count();
+        $status1Count = $Order->where('customer_id = ' . '1' . ' AND order_status = 1')->count();
+        $status2Count = $Order->where('customer_id = ' . '1' . ' AND order_status = 2')->count();
+        $status3Count = $Order->where('customer_id = ' . '1' . ' AND order_status = 3')->count();
+
+        $this->assign('status0Count', $status0Count);
+        $this->assign('status1Count', $status1Count);
+        $this->assign('status2Count', $status2Count);
+        $this->assign('status3Count', $status3Count);
+
+        // 最近订单
+        $orders = $Order->where('customer_id = ' . '1')->relation(true)->limit(5)->select();
+        $this->assign('orders', $orders);
+        
         $this->display();
     }
 
