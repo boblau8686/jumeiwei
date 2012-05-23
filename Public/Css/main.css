@@ -1,12 +1,15 @@
 * {font-family:"宋体", 'Arial Narrow';}
-html, body {margin:0px;padding:0px;}
+html, body, ul, li {margin:0px;padding:0px;}
 a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
+ul { list-style: none; }
+a { text-decoration: none; }
 
+/* common */
 .topbanner {
-	height: 30px;
-	padding: 10px 180px 0px 0px;
-	text-align:right;
-	border:1px solid #efefef;
+    height: 30px;
+    padding: 10px 180px 0px 0px;
+    text-align:right;
+    border:1px solid #efefef;
 }
 .topbanner a {text-decoration:none;}
 .topbanner a:hover {text-decoration:underline;}
@@ -14,26 +17,39 @@ a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
 .container {width:1000px;margin:0px auto;border:1px solid #efefef;}
 .header {width:100%;height:60px;border:1px solid #efefef;}
 
+.part { margin-top: 10px; }
+.first_part { margin-top: 0; }
+
+.tab { width: 100%; border-bottom: 1px #000 solid; float: left; }
+.tab li { width: 100px; text-align: center; border: 1px #000 solid; border-bottom: none; padding: 5px; float: left; margin-left: 10px; }
+
+.table { width: 100%; border-collapse: collapse; }
+.table th { background: #EEE; }
+.table td { background: #FFF; text-align: center; }
+.table td.text_left { text-align: left; }
+
+.btn, .btns a { width: 40px; height: 20px; text-align: center; display: inline-block;}
+
 /* navigation */
 .nav {width:100%;height:80px;border:1px solid #efefef;}
 .nav ul {
-	list-style-type:none;
-	height:70px; padding:0px;
-	margin:0px 0px;
-	background-color:#efefef;
+    list-style-type:none;
+    height:70px; padding:0px;
+    margin:0px 0px;
+    background-color:#efefef;
 }
 .nav ul li {float:left;margin:5px;border-radius: 10px;}
 .nav ul li a {
-	background-repeat: no-repeat;
-	background-position: right;
-	padding-right: 32px;
-	padding-left: 32px;
-	display: block;
-	line-height: 60px;
-	text-decoration: none;
-	font-size: 22px;
-	color: #371C1C;
-	border-radius: 10px;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 32px;
+    padding-left: 32px;
+    display: block;
+    line-height: 60px;
+    text-decoration: none;
+    font-size: 22px;
+    color: #371C1C;
+    border-radius: 10px;
 }
 .nav ul li a:hover {background-color:#dedede;}
 .nav ul li.active {background-color:#dedede;}
@@ -49,10 +65,29 @@ a, span, font, div, p, li, dd, dl, dt, input{font-size:14px;}
 .intro .b_base ul {list-style-type:none;}
 .intro .b_pic {float:right;}
 
+/* customer left */
+.cus_left { width:190px; float: left; margin-right:10px; }
+.cus_left ul { margin: 10px 0; border: 1px solid #000; border-radius:5px; }
+.cus_left ul li { padding: 10px; }
+
+/* customer right */
+.cus_right { width: 800px; float: right; padding-top: 10px; }
+.cus_right div { width: 800px; float: left; }
+.cus_right .basic_info { width: 778px; border: 1px #000 solid; padding: 10px; }
+.cus_right .basic_info a { margin: 0 20px 0 0; }
+.cus_right .basic_info .head_pic { width:120px; text-align: center; }
+.cus_right .basic_info .nick_name { font-family: 'Microsoft Yahei'; font-size: 18px; font-weight: bold; }
+.cus_right .basic_info .grade { width: 658px; margin: 10px 0 0 0; }
+.cus_right .basic_info .safe { width: 658px; margin: 10px 0 0 0; }
+.cus_right .basic_info .remind { width: 636px; border: 1px #EEE solid; border-radius: 5px; padding: 0 10px; }
+
+.cus_right .recommend .scroll { height: 200px; }
+
+
 .sidebar {width:260px;margin-right:20px;float:right;border:1px solid #dcdcdc;}
 .sidebar .cart_button {text-align:right;}
 .sidebar .subtract, .add {border:1px solid #bcbcbc;cursor:pointer;}
 .sidebar .subtract {margin-left:3px;}
 .sidebar .add {margin-right:3px;}
 
-.footer {height:40px;border:1px solid #dcdcdc;}
+.footer {height:40px;border:1px solid #dcdcdc; clear: both; }

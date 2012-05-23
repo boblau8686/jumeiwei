@@ -1,0 +1,75 @@
+<include file="Tpl/Home/cus_menu.html" /> 
+<div class="cus_right">
+    <div class="basic">
+        <ul class="tab">
+            <li>基本信息</li>
+        </ul>
+        <table width="100%" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>昵称</th>
+                <td>{$customer.nickname}</td>
+                <th>手机</th>
+                <td>{$customer.mobile}</td>
+            </tr>
+            <tr>
+                <th>邮箱</th>
+                <td>{$customer.email}</td>
+                <th>积分</th>
+                <td>{$customer.score}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="address">
+        <ul class="tab">
+            <li>收货地址</li>
+        </ul>
+        <table width="100%" cellpadding="5" cellspacing="0" border="1" bordercolor="#DDD" class="table">
+            <tr>
+                <th>编号</th>
+                <th>地址</th>
+                <th>收货人</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="address">
+                <tr>
+                    <td>{$i}</td>
+                    <td class="text_left">{$address.address}</td>
+                    <td>{$address.realname}</td>
+                    <td>{$address.telephone}</td>
+                    <td>{$address.email}</td>
+                    <td><a href="del/id">删除</a></td>
+                </tr>
+            </volist>
+        </table>
+        <form action="__URL__/insertAddress" method="post">
+            <table border="0" width="100%" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td colspan="2"><strong>新增地址</strong></td>
+                </tr>
+                <tr>
+                    <td>地址</td>
+                    <td><input name="DiZhi" type="text" id="DiZhi" size="80" /></td>
+                </tr>
+                <tr>
+                    <td>收货人</td>
+                    <td><input name="ShouHuoRen" type="text" id="ShouHuoRen" /></td>
+                </tr>
+                <tr>
+                    <td>电话</td>
+                    <td><input type="text" name="DianHua" id="DianHua" /></td>
+                </tr>
+                <tr>
+                    <td>邮箱</td>
+                    <td><input type="text" name="YouXiang" id="YouXiang" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" name="button" id="button" value="提交" /></td>
+                </tr>
+            </table>
+            <input type="hidden" name="YongHuId" value="1" />
+        </form>
+    </div>
+</div>

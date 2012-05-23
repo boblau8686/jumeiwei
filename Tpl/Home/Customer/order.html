@@ -1,0 +1,40 @@
+<include file="Tpl/Home/cus_menu.html" /> 
+<div class="cus_right">
+    <table cellpadding="5" cellspacing="0" border="1" bordercolor="#DDD" class="table">
+        <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>订购餐品</th>
+                <th>收货人</th>
+                <th>金额</th>
+                <th>下单时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="order">
+            <tr>
+                <td>{$order.order_sn}</td>
+                <td class="text_left">
+                    <volist name="order.food" id="food">
+                        {$food.name}
+                    </volist>
+                </td>
+                <td class="text_left">{$order.address.address}</td>
+                <td>{$order.amount}</td>
+                <td>{$order.create_time}</td>
+                <td>{$order.order_status|toOrderStatus}</td>
+                <td>
+                    <a href="">查看详情</a>
+                    <a href="">删除</a>
+                    <a href="">评价</a>
+                </td>
+            </tr>
+            </volist>
+            <tr>
+                <td colspan="7"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
