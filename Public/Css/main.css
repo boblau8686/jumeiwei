@@ -38,7 +38,7 @@ a { text-decoration: none; }
     margin:0px 0px;
     background-color:#efefef;
 }
-.nav ul li {float:left;margin:5px;border-radius: 10px;}
+.nav ul li {float:left;margin:5px;border-radius: 3px;}
 .nav ul li a {
     background-repeat: no-repeat;
     background-position: right;
@@ -49,7 +49,7 @@ a { text-decoration: none; }
     text-decoration: none;
     font-size: 22px;
     color: #371C1C;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 .nav ul li a:hover {background-color:#dedede;}
 .nav ul li.active {background-color:#dedede;}
