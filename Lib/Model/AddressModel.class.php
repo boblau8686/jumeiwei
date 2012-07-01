@@ -5,7 +5,8 @@
  *
  * @author Bob
  */
-class AddressModel extends RelationModel {
+class AddressModel extends Model {
+
     protected $_map = array(
         'DiZhi' => 'address',
         'ShouHuoRen' => 'realname',
@@ -13,6 +14,7 @@ class AddressModel extends RelationModel {
         'YouXiang' => 'email',
         'YongHuId' => 'customer_id'
     );
+
 }
 
 ?>

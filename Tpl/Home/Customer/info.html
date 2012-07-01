@@ -39,11 +39,11 @@
                     <td>{$address.realname}</td>
                     <td>{$address.telephone}</td>
                     <td>{$address.email}</td>
-                    <td><a href="del/id">删除</a></td>
+                    <td><a href="/address/delete/id/{$address.id}">删除</a></td>
                 </tr>
             </volist>
         </table>
-        <form action="__URL__/insertAddress" method="post">
+        <form action="/address/insert" method="post">
             <table border="0" width="100%" cellpadding="5" cellspacing="0">
                 <tr>
                     <td colspan="2"><strong>新增地址</strong></td>

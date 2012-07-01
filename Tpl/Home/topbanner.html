@@ -10,9 +10,14 @@
 <else/>
     <span>欢迎来到聚美味外卖网！</span>
     <a href=>购物车(0)</a>
+    
+    <present name="Think.session.username">
+    <a href="">{$Think.session.username}</a>
+    <else />
     <a href="#" onclick="toQzoneLogin()">登录</a>
     <span> | </span>
-    <a href=>注册</a>
+    <a href="/customer/register">注册</a>
+    </present>
     <span> | </span>
     <a href=>修改您的位置</a>
 </if>

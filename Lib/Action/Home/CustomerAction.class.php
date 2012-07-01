@@ -7,6 +7,9 @@
  */
 class CustomerAction extends Action {
 
+    /**
+     * 我的主页-用户中心
+     */
     public function index() {
         $Customer = D('Customer');
         $customer = $Customer->getById(1);
@@ -34,6 +37,9 @@ class CustomerAction extends Action {
         $this->display();
     }
 
+    /**
+     * 我的主页-我的订单
+     */
     public function order() {
         $Order = D('Order');
         $list = $Order->where('customer_id = ' . '1')->limit(5)->relation(true)->select();
@@ -42,6 +48,9 @@ class CustomerAction extends Action {
         $this->display();
     }
 
+    /**
+     * 我的主页-我的收藏
+     */
     public function collect() {
         $type = $this->_get('type') == '' ? '1' : $this->_get('type');
         $table = $type == '1' ? 'food' : 'business';
@@ -53,6 +62,9 @@ class CustomerAction extends Action {
         $this->display();
     }
 
+    /**
+     * 我的主页-个人信息
+     */
     public function info() {
         $Customer = D('Customer');
         $customer = $Customer->getById(1);
@@ -64,15 +76,26 @@ class CustomerAction extends Action {
         $this->display();
     }
 
-    public function insertAddress() {
-        $Address = D('Address');
-        $data = $Address->create();
-        $result = $Address->add($data);
-        dump($result);
-        if ($result) {
-            $this->redirect('Customer/info');
-        }
+    /**
+     * 注册
+     */
+    public function register() {
+        $this->display();
+    }
 
+    /**
+     * 添加用户
+     */
+    public function insert() {
+        $Customer = D('Customer');
+        $data = $Customer->create();
+        $lastId = $Customer->add();
+        if ($lastId) {
+            // 登录
+            session('customer_id', $lastId);
+            session('username', $data['username']);
+            $this->success('注册成功', '/');
+        }
     }
 
 }
