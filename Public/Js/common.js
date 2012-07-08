@@ -76,7 +76,7 @@ function createCartList(d) {
  * @param id
  */
 function subtract(id) {
-	var url = '/business/cartdel/foodid/' + id;
+	var url = '/business/cartsubstract/foodid/' + id;
 	$.post(url, function(){
 		if (typeof orderFoodList[id] == 'object' && orderFoodList[id]['count'] <= 1) {
 			delete orderFoodList[id];

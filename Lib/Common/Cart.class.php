@@ -61,7 +61,13 @@ class Cart
      */
     public function substract($id)
     {
-        
+        if ($this->data[$id] && (1 < $this->data[$id]['count'])) {
+            $this->data[$id]['count'] -= 1;
+        } else if (1 == $this->data[$id]['count']) {
+            unset($this->data[$i]);
+        } else {
+            return false;
+        }
+        return true;
     }
 }
-
