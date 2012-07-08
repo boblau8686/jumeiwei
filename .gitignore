@@ -2,5 +2,5 @@
 .project
 .settings
 .gitignore
-Runtime
-nbproject
+/Runtime
+/nbproject
