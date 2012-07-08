@@ -64,7 +64,7 @@ function createCartList(d) {
 			h += '<font>' + d[i].name + '</font>';
 			h += '<span class="subtract" onclick="subtract(' + d[i].id + ')"> - </span>';
 			h += '<input type="text" size="2" value="' + d[i].count + '" />';
-			h += '<span class="add"> + </span>';
+			h += '<span class="add" onclick="addToCart(' + d[i].id + ')"> + </span>';
 			h += '<font>份</font><font>￥' + d[i].price + '</font></li>';
 		}
 	}
